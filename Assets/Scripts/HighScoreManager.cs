@@ -7,10 +7,15 @@ public class HighScoreManager : MonoBehaviour
     [Header("Level Name"),SerializeField]
     private StringPhariable levelName;
 
-    [Header("Highscore Phariables"), SerializeField]
+    [Header("Time Phariables"), SerializeField]
     private IntPhariable timerSeconds;
     [SerializeField]
     private IntPhariable timerMinutes;
+
+    [Header("Highscore Phariables"), SerializeField]
+    private IntPhariable highscoreSeconds;
+    [SerializeField]
+    private IntPhariable highscoreMinutes;
 
     [Space(10), SerializeField]
     private BoolPhariable isNewHighscore;
@@ -28,16 +33,19 @@ public class HighScoreManager : MonoBehaviour
         finishEvent.UnSubscribeFromOnChangeSignal("Finish Level", SaveHighScore);
     }
 
-    public void SaveHighScore()
+    private void SaveHighScore()
     {
-        int highSeconds = PlayerPrefs.GetInt(levelName.value + "_highscore_seconds");
-        int highMinutes = PlayerPrefs.GetInt(levelName.value + "_highscore_minutes");
+        highscoreSeconds.value = PlayerPrefs.GetInt(levelName.value + "_highscore_seconds");
+        highscoreMinutes.value = PlayerPrefs.GetInt(levelName.value + "_highscore_minutes");
 
-        if((timerMinutes.value <= highMinutes && timerSeconds.value < highSeconds) || (highSeconds == 0 && highMinutes == 0))
+        if((timerMinutes.value <= highscoreMinutes.value && timerSeconds.value < highscoreSeconds.value) || (highscoreSeconds.value == 0 && highscoreMinutes.value == 0))
         {
             Debug.Log("[HIGHSCORE MANAGER] Highscore saved!");
             PlayerPrefs.SetInt(levelName.value + "_highscore_seconds", timerSeconds.value);
             PlayerPrefs.SetInt(levelName.value + "_highscore_minutes", timerMinutes.value);
+
+            highscoreSeconds.value = timerSeconds.value;
+            highscoreMinutes.value = timerMinutes.value;
 
             isNewHighscore.value = true;
         }
@@ -46,5 +54,12 @@ public class HighScoreManager : MonoBehaviour
             Debug.Log("[HIGHSCORE MANAGER] Current time is no new highscore.");
             isNewHighscore.value = false;
         }
+    }
+
+    [ContextMenu("Reset Highscore")]
+    public void ResetHighScore()
+    {
+        PlayerPrefs.SetInt(levelName.value + "_highscore_seconds", 0);
+        PlayerPrefs.SetInt(levelName.value + "_highscore_minutes", 0);
     }
 }
