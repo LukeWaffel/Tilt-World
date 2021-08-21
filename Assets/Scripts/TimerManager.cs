@@ -12,18 +12,22 @@ public class TimerManager : MonoBehaviour
     private IntPhariable timeMinutes;
 
     [Header("Events"),SerializeField]
-    private BoolPhariable timerReset;
+    private BoolPhariable resetGame;
+    [SerializeField]
+    private BoolPhariable finishGame;
 
     private float seconds;
 
     private void OnEnable()
     {
-        timerReset.SubscribeToOnChangeSignal("Reset Timer", ResetTimer);
+        resetGame.SubscribeToOnChangeSignal("Reset Game", ResetTimer);
+        finishGame.SubscribeToOnChangeSignal("Finish Level", DisableTimer);
     }
 
     private void OnDisable()
     {
-        timerReset.UnSubscribeFromOnChangeSignal("Reset Timer", ResetTimer);
+        resetGame.UnSubscribeFromOnChangeSignal("Reset Game", ResetTimer);
+        finishGame.UnSubscribeFromOnChangeSignal("Finish Level", DisableTimer);
     }
 
     // Update is called once per frame
@@ -43,16 +47,23 @@ public class TimerManager : MonoBehaviour
         timeSeconds.value = (int)seconds;
     }
 
-    public void ResetTimer()
+    private void DisableTimer()
+    {
+        timerEnabled.value = false;
+    }
+
+    private void ResetTimer()
     {
         seconds = 0;
         timeSeconds.value = 0;
         timeMinutes.value = 0;
+
+        timerEnabled.value = true;
     }
 
     [ContextMenu("Reset Timer")]
     public void CallResetTimer()
     {
-        timerReset.value = !timerReset.value;
+        resetGame.value = !resetGame.value;
     }
 }

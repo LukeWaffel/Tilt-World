@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using ExpPlus.Phariables;
 
 public class TiltController : MonoBehaviour
@@ -12,16 +11,32 @@ public class TiltController : MonoBehaviour
     private FloatPhariable maxTiltAngle;
     //private float maxTiltAngle = 30f;
 
-    private Vector2 input;
+    [Header("Input References"), SerializeField]
+    private FloatPhariable inputX;
+    [SerializeField]
+    private FloatPhariable inputZ;
+
+    [Header("Reset Event"), SerializeField]
+    private BoolPhariable resetGame;
 
     private float rotX;
     private float rotZ;
 
+    private void OnEnable()
+    {
+        resetGame.SubscribeToOnChangeSignal("Reset Game", ResetTilt);
+    }
+
+    private void OnDisable()
+    {
+        resetGame.UnSubscribeFromOnChangeSignal("Reset Game", ResetTilt);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        rotX += input.x * tiltSpeed.value;
-        rotZ += input.y * tiltSpeed.value;
+        rotX += inputX.value * tiltSpeed.value;
+        rotZ += inputZ.value * tiltSpeed.value;
 
         rotX = Mathf.Clamp(rotX, -maxTiltAngle.value, maxTiltAngle.value);
         rotZ = Mathf.Clamp(rotZ, -maxTiltAngle.value, maxTiltAngle.value);
@@ -29,8 +44,9 @@ public class TiltController : MonoBehaviour
         transform.localEulerAngles = new Vector3(rotX, transform.localEulerAngles.y, rotZ);
     }
 
-    public void TiltInput(InputAction.CallbackContext context)
+    private void ResetTilt()
     {
-        input = context.ReadValue<Vector2>();
+        rotX = 0;
+        rotZ = 0;
     }
 }
