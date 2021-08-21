@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 1
   onChangeSignals:
-  - name: Finish Game
+  - name: Finish Level
     conditions:
     - value: 1
       logic: []

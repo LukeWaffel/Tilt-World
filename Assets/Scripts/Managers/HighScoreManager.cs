@@ -40,7 +40,6 @@ public class HighScoreManager : MonoBehaviour
 
         if((timerMinutes.value <= highscoreMinutes.value && timerSeconds.value < highscoreSeconds.value) || (highscoreSeconds.value == 0 && highscoreMinutes.value == 0))
         {
-            Debug.Log("[HIGHSCORE MANAGER] Highscore saved!");
             PlayerPrefs.SetInt(levelName.value + "_highscore_seconds", timerSeconds.value);
             PlayerPrefs.SetInt(levelName.value + "_highscore_minutes", timerMinutes.value);
 
@@ -51,7 +50,6 @@ public class HighScoreManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("[HIGHSCORE MANAGER] Current time is no new highscore.");
             isNewHighscore.value = false;
         }
     }

@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28d42c88f90675428484730e7816f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  container: {fileID: 0}
   time: {fileID: 4632632950706578892}
   highscore: {fileID: 4632632949809304389}
   trophy: {fileID: 4020404818830531621}
@@ -58,6 +59,7 @@ MonoBehaviour:
   highscoreSeconds: {fileID: 11400000, guid: db3875616841ee44f8319ad7a62ea063, type: 2}
   highscoreMinutes: {fileID: 11400000, guid: f6467fc413ffbd44881e6c38ba6139e4, type: 2}
   isNewHighScore: {fileID: 0}
+  finishLevel: {fileID: 0}
 --- !u!1 &4020404818830531621
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,7 +876,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4632632950490819506}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 648203244976268976}
+        m_TargetAssemblyTypeName: LevelFinishedController, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Main Menu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4632632950547877461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,7 +1581,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4632632951858674276}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3374584487250861834}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4632632951860249393
 GameObject:
   m_ObjectHideFlags: 0

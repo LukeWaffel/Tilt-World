@@ -188,6 +188,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "nl.exp-plus.anvil.molds": {
+      "version": "1.0.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "http://192.168.68.104:4873"
+    },
     "nl.exp-plus.anvil.phariables": {
       "version": "1.0.0",
       "depth": 0,

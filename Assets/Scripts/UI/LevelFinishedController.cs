@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using ExpPlus.Phariables;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class LevelFinishedController : MonoBehaviour
 {
@@ -62,5 +63,10 @@ public class LevelFinishedController : MonoBehaviour
         trophy.SetActive(isNewHighScore.value);
 
         container.SetActive(true);
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
