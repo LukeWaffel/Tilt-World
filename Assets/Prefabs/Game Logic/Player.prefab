@@ -425,6 +425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb33a5bb955df20468550c00fdc3416b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  failSafeDepth: {fileID: 11400000, guid: ef5692e944d7dd240a94f18bf5bf0ef4, type: 2}
+  resetGame: {fileID: 11400000, guid: 16f052393c153024d948bc9021bb89c6, type: 2}
 --- !u!1 &6504167436686115545
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   prefabs:
   - gameObject: {fileID: 1383968794529117473, guid: 4e2f795861d2ee14abb931c65a8b250b, type: 3}
     settings:
-      m_Strength: 83.777306
+      m_Strength: 100
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -47,7 +47,7 @@ MonoBehaviour:
     name: flower_redC
   - gameObject: {fileID: 8329023394895724225, guid: be0292266a694094ead880078d3d0423, type: 3}
     settings:
-      m_Strength: 13.063031
+      m_Strength: 4.7437034
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -63,7 +63,7 @@ MonoBehaviour:
     name: flower_yellowB
   - gameObject: {fileID: 3418905082974120049, guid: 30f215dd179686543af2f76549a0b5c2, type: 3}
     settings:
-      m_Strength: 13.063031
+      m_Strength: 2.6638715
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
