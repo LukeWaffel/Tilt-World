@@ -16,6 +16,16 @@ public class TimerManager : MonoBehaviour
 
     private float seconds;
 
+    private void OnEnable()
+    {
+        timerReset.SubscribeToOnChangeSignal("Reset Timer", ResetTimer);
+    }
+
+    private void OnDisable()
+    {
+        timerReset.UnSubscribeFromOnChangeSignal("Reset Timer", ResetTimer);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -38,5 +48,11 @@ public class TimerManager : MonoBehaviour
         seconds = 0;
         timeSeconds.value = 0;
         timeMinutes.value = 0;
+    }
+
+    [ContextMenu("Reset Timer")]
+    public void CallResetTimer()
+    {
+        timerReset.value = !timerReset.value;
     }
 }
