@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using ExpPlus.Phariables;
 
 public class TiltController : MonoBehaviour
 {
     [Header("Config"),SerializeField]
-    private float tiltSpeed = 1;
+    //private float tiltSpeed = 0.05f;
+    private FloatPhariable tiltSpeed;
 
     [SerializeField]
-    private float maxTiltAngle;
+    private FloatPhariable maxTiltAngle;
+    //private float maxTiltAngle = 30f;
 
     private Vector2 input;
 
@@ -17,11 +20,11 @@ public class TiltController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rotX += input.x * tiltSpeed;
-        rotZ += input.y * tiltSpeed;
+        rotX += input.x * tiltSpeed.value;
+        rotZ += input.y * tiltSpeed.value;
 
-        rotX = Mathf.Clamp(rotX, -maxTiltAngle, maxTiltAngle);
-        rotZ = Mathf.Clamp(rotZ, -maxTiltAngle, maxTiltAngle);
+        rotX = Mathf.Clamp(rotX, -maxTiltAngle.value, maxTiltAngle.value);
+        rotZ = Mathf.Clamp(rotZ, -maxTiltAngle.value, maxTiltAngle.value);
 
         transform.localEulerAngles = new Vector3(rotX, transform.localEulerAngles.y, rotZ);
     }
