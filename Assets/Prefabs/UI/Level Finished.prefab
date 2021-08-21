@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 6821864970829308935}
   - component: {fileID: 83553657388705173}
   - component: {fileID: 7287761275250616078}
+  - component: {fileID: 3352698544151315309}
   m_Layer: 5
   m_Name: Trophy
   m_TagString: Untagged
@@ -92,10 +93,10 @@ RectTransform:
   m_Father: {fileID: 4632632950547877462}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 19.635}
-  m_AnchorMin: {x: 0.7855697, y: 0.4573968}
-  m_AnchorMax: {x: 0.9038222, y: 0.7281756}
-  m_AnchoredPosition: {x: -77.0681, y: -8.3}
-  m_SizeDelta: {x: 20.6023, y: 19.3035}
+  m_AnchorMin: {x: 0.72800004, y: 0.45734984}
+  m_AnchorMax: {x: 0.83900005, y: 0.7281756}
+  m_AnchoredPosition: {x: -80.6, y: -6.9000006}
+  m_SizeDelta: {x: 23.602303, y: 19.3035}
   m_Pivot: {x: 0.5000002, y: 0.4999998}
 --- !u!222 &83553657388705173
 CanvasRenderer:
@@ -135,6 +136,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!111 &3352698544151315309
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4020404818830531621}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 18304b25924299f4f8b4fe472741f461, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &4632632949790795533
 GameObject:
   m_ObjectHideFlags: 0
