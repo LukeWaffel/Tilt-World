@@ -67,6 +67,7 @@ public class LevelFinishedController : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        levelName.value = sceneName;
         SceneManager.LoadScene(sceneName);
     }
 }
